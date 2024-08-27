@@ -11,7 +11,7 @@ services:
         bucket_name: ${bucket_name}
         spotify_client_id: ${spotify_client_id}
     ports:
-      - "5000:5000"
+      - "5001:5000"
     environment:
       application_key_id: ${application_key_id}
       application_key: ${application_key}
