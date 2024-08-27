@@ -5,6 +5,11 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+      args:
+        application_key_id: ${application_key_id}
+        application_key: ${application_key}
+        bucket_name: ${bucket_name}
+        spotify_client_id: ${spotify_client_id}
     ports:
       - "5000:5000"
     environment:
@@ -21,6 +26,15 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
+      args:
+        DATABASE_URL: ${DATABASE_URL}
+        NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: ${NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
+        CLERK_SECRET_KEY: ${CLERK_SECRET_KEY}
+        NEXT_PUBLIC_CLERK_SIGN_IN_URL: ${NEXT_PUBLIC_CLERK_SIGN_IN_URL}
+        NEXT_PUBLIC_CLERK_SIGN_UP_URL: ${NEXT_PUBLIC_CLERK_SIGN_UP_URL}
+        NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL: ${NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL}
+        NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL: ${NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL}
+        BACKEND_URL: ${BACKEND_URL}
     ports:
       - "3000:3000"
     depends_on:
