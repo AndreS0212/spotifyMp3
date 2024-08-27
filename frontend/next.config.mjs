@@ -3,7 +3,7 @@
  * for Docker builds.
  */
 await import("./src/env.mjs");
-console.log("Environment Variables:");
+console.log("Environment Variables:", process.env);
 console.log("DATABASE_URL:", process.env.DATABASE_URL);
 console.log("BACKEND_URL:", process.env.BACKEND_URL);
 console.log("CLERK_SECRET_KEY:", process.env.CLERK_SECRET_KEY);
