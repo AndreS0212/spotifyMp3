@@ -6,7 +6,8 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json
 COPY package.json package-lock.json ./
-
+# Set SKIP_ENV_VALIDATION to skip environment variable validation
+ENV SKIP_ENV_VALIDATION=true
 # Install dependencies
 RUN npm install
 
