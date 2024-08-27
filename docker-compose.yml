@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5000:5000"
-    enviroment:
+    environment:
       application_key_id: ${application_key_id}
       application_key: ${application_key}
       bucket_name: ${bucket_name}
