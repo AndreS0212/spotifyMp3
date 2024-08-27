@@ -17,8 +17,6 @@ services:
       application_key: ${application_key}
       bucket_name: ${bucket_name}
       spotify_client_id: ${spotify_client_id}
-    depends_on:
-      - db
     networks:
       - app-network
 
@@ -50,9 +48,5 @@ services:
       BACKEND_URL: ${BACKEND_URL}
     networks:
       - app-network
-volumes:
-  db_data:
-
-
 networks:
   app-network:
