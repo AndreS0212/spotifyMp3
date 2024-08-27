@@ -50,21 +50,6 @@ services:
       BACKEND_URL: ${BACKEND_URL}
     networks:
       - app-network
-
-  db:
-    image: mysql:8.0
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-    volumes:
-      - db_data:/var/lib/mysql
-    networks:
-      - app-network
-
 volumes:
   db_data:
 
