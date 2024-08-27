@@ -40,8 +40,6 @@ RUN npx prisma generate
 
 # Build the ext.js application
 RUN npm run build
-COPY migrate-and-start.sh .
-RUN chmod +x migrate-and-start.sh
 # Production stage to reduce image size
 FROM node:18-alpine AS runner
 
@@ -54,11 +52,10 @@ COPY --from=builder /app/.next/static ./.next/static
 COPY --from=builder /app/public ./public
 COPY prisma ./prisma/
 COPY --chown=nextjs:nodejs prisma ./prisma/
-COPY migrate-and-start.sh .
 # Ensure Node.js knows to run in production mode
 ENV NODE_ENV production
 # Expose the port that Next.js listens to
 EXPOSE 3000
 
 # Start the Next.js application
-CMD ["./migrate-and-start.sh"]
+CMD ["node","server.js"]
