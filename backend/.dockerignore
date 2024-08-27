@@ -1,0 +1,27 @@
+# Ignore the virtual environment directory
+venv/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore environment and config files (optional, depending on your project)
+.env
+*.env
+*.cfg
+*.ini
+
+# Ignore any logs
+*.log
+/tmp
+# Ignore Dockerfile and docker-compose files themselves
+Dockerfile
+docker-compose.yml
+
+# Ignore other potential sensitive or unnecessary files
+.git
+.gitignore
+.idea/
+.vscode/
+*.swp
