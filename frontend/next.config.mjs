@@ -3,6 +3,14 @@
  * for Docker builds.
  */
 await import("./src/env.mjs");
+console.log("Environment Variables:");
+console.log("DATABASE_URL:", process.env.DATABASE_URL);
+console.log("BACKEND_URL:", process.env.BACKEND_URL);
+console.log("CLERK_SECRET_KEY:", process.env.CLERK_SECRET_KEY);
+console.log(
+  "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:",
+  process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
+);
 
 /** @type {import("next").NextConfig} */
 const config = {
